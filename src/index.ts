@@ -14,7 +14,7 @@ mongoose.connect(process.env.MONGO_URL || '')
     .catch(err => console.error('Error connecting to MongoDB:', err));
 
 app.use(express.json());
-app.use(cors({ origin: process.env.CLIENT_API, credentials: true }));
+app.use(cors({ origin: 'https://getmovies-seven.vercel.app', credentials: true }));
 
 app.use('/api', movieRoutes);
 
