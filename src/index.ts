@@ -5,7 +5,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import movieRoutes from './routes/movies';
 
-dotenv.config();
+dotenv.config(); 
 
 const app = express();
 
@@ -16,7 +16,7 @@ mongoose.connect(process.env.MONGO_URL || '')
 app.use(express.json());
 app.use(cors({ origin: process.env.CLIENT_API, credentials: true }));
 
-app.use('/api', movieRoutes);
+app.use('/api', movieRoutes); 
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
