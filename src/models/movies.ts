@@ -6,6 +6,8 @@ export interface IMovie extends Document {
   year: number;
   genre: string;
   banner_image: string;
+  slider_image:string;
+  discription:string;
 }
 
 const MovieSchema = new Schema<IMovie>({
@@ -28,6 +30,12 @@ const MovieSchema = new Schema<IMovie>({
   banner_image: {
     type: String,
     required: true
+  },
+  slider_image: {
+    type: String,
+  },
+  discription: {
+    type: String,
   }
 });
 
