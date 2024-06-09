@@ -3,7 +3,9 @@ import { MovieModel } from '../models/movies';
 
 export const getMovies = async (req: Request, res: Response): Promise<void> => {
   try {
+    console.log('route called')
     const movies = await MovieModel.find().sort({id:1});
+    console.log(movies)
     res.json(movies);
   } catch (error:any) {
     res.status(500).json({ message: error.message });
